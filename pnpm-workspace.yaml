@@ -1,3 +1,5 @@
+packages:
+  - "namesake-docs"
 allowBuilds:
   esbuild: true
   sharp: true
