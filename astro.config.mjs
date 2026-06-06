@@ -3,6 +3,7 @@
 import cloudflare from "@astrojs/cloudflare";
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
+import starlightThemeFlexoki from "starlight-theme-flexoki";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +16,14 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: "Contributor Manual",
+      title: "Namesake",
+      description:
+        "The Namesake Contributor Manual documents how to help Namesake build tools for legal name changes in the U.S.",
+      plugins: [
+        starlightThemeFlexoki({
+          accentColor: "magenta",
+        }),
+      ],
       logo: {
         light: "./src/assets/logo-light.svg",
         dark: "./src/assets/logo-dark.svg",
@@ -31,6 +39,14 @@ export default defineConfig({
           items: ["guides/setup", "guides/new-pdfs", "guides/building-forms"],
         },
       ],
+      editLink: {
+        baseUrl: "https://github.com/namesakefyi/docs/edit/main/",
+      },
+      lastUpdated: true,
+      titleDelimiter: "·",
+      expressiveCode: {
+        themes: ["github-dark-high-contrast", "github-light"],
+      },
       social: [
         {
           icon: "discord",
