@@ -8,6 +8,11 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://docs.namesake.fyi",
   adapter: cloudflare(),
+  session: {
+    driver: {
+      entrypoint: "unstorage/drivers/null",
+    },
+  },
   integrations: [
     starlight({
       title: "Contributor Manual",
