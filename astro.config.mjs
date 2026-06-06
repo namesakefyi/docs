@@ -1,10 +1,12 @@
 // @ts-check
 
+import cloudflare from "@astrojs/cloudflare";
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: cloudflare(),
   integrations: [
     starlight({
       title: "Contributor Manual",
